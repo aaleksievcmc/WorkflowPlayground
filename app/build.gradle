@@ -33,9 +33,24 @@ android {
     }
   }
 
+  signingConfigs {
+    debug {
+      storeFile file("debug_key")
+      storePassword "!Password"
+      keyAlias "debug-key"
+      keyPassword "!Password"
+    }
+  }
+
   buildTypes {
+    debug {
+      debuggable true
+      minifyEnabled false
+      signingConfig signingConfigs.debug
+    }
     release {
       minifyEnabled false
+      signingConfig signingConfigs.debug
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
