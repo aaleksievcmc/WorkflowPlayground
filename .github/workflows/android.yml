@@ -21,10 +21,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
 
-    - name: Setup env variables
-      run: |
-        echo "BUILD_NUMBER=${{github.run_number}}" >> $GITHUB_ENV
-        echo "::notice BUILD_NUMBER is ${{env.BUILD_NUMBER}}"
+    - name: Setup build env variables
+      env:
+        BUILD_NUMBER: ${{github.run_number}}
+      run: echo "BUILD_NUMBER=${{env.BUILD_NUMBER}}" >> $GITHUB_ENV
 
     - name: Assemble with Gradle
       run: ./gradlew assembleDebug
