@@ -17,9 +17,10 @@ android {
     versionCode appVersionCode
 
     applicationVariants.all { variant ->
+      def variantName = variant.getName().toLowerCase()
       def versionName = appVersionName
       variant.outputs.each { output ->
-        if (variant.buildType.isDebuggable()) {
+        if (variantName != "release") {
           versionName += ".$appVersionCode"
         }
         output.versionNameOverride = versionName
