@@ -47,4 +47,4 @@ jobs:
       if: success()
       with:
         name: app-debug.apk
-        path: ./app/build/outputs/apk/release/app-release-unsigned.apk
+        path: ./app/build/outputs/apk/release/app-release.apk
