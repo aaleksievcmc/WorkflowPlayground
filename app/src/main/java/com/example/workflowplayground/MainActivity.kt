@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String) {
   Column {
     Text(text = "Hello $name!")
-    Text(text = "app version: ${BuildConfig.VERSION_NAME}.${BuildConfig.VERSION_CODE}")
+    Text(text = "app version: ${BuildConfig.VERSION_NAME}")
   }
 }
 
