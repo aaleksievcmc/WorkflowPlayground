@@ -33,11 +33,18 @@ jobs:
       run: ./gradlew clean
 
     - name: Assemble app
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleDebug assembleRelease
 
-    - name: Upload apk
+    - name: Upload debug apk
       uses: actions/upload-artifact@v2
       if: success()
       with:
         name: app-debug.apk
         path: ./app/build/outputs/apk/debug/app-debug.apk
+
+    - name: Upload release apk
+      uses: actions/upload-artifact@v2
+      if: success()
+      with:
+        name: app-debug.apk
+        path: ./app/build/outputs/apk/release/app-release-unsigned.apk
