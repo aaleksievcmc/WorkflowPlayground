@@ -27,7 +27,7 @@ jobs:
       run: echo "BUILD_NUMBER=${{env.BUILD_NUMBER}}" >> $GITHUB_ENV
 
     - name: Increase Java heap space
-      run: echo "org.gradle.jvmargs=-Xmx4096M" >> gradle.properties
+      run: echo "org.gradle.jvmargs=-Xmx4096m" >> gradle.properties
 
     - name: Clean
       run: ./gradlew clean
