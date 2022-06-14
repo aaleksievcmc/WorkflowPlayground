@@ -5,7 +5,7 @@ plugins {
 
 android {
   def buildNumber = System.getenv("BUILD_NUMBER") ?: "0"
-  def appVersionCode = Integer.valueOf(100) + Integer.valueOf(buildNumber)
+  def appVersionCode = 100 + Integer.valueOf(buildNumber)
   def appVersionName = "1.0.1"
 
   compileSdk 32
