@@ -6,12 +6,14 @@ plugins {
 android {
   compileSdk 32
 
+  def buildNumber = System.getenv("BUILD_NUMBER") ?: "0"
+
   defaultConfig {
     applicationId "com.example.workflowplayground"
     minSdk 24
     targetSdk 32
-    versionCode 1
-    versionName "1.0"
+    versionCode 100 + buildNumber.toInteger()
+    versionName "1.0.$buildNumber"
 
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables {
