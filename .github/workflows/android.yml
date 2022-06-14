@@ -27,7 +27,7 @@ jobs:
       run: echo "BUILD_NUMBER=${{env.BUILD_NUMBER}}" >> $GITHUB_ENV
 
     - name: Assemble with Gradle
-      run: ./gradlew assembleDebug
+      run: ./gradlew clean assembleDebug
 
     - name: Upload apk
       uses: actions/upload-artifact@v2
